@@ -29,7 +29,8 @@ public class TestInputCodegen : MonoBehaviour
 
     private void TestPerformed(InputAction.CallbackContext ctx) =>
         Debug.Log("Input action performed.");
-}```
+}
+```
 
 This example carries a couple of asssumptions:
 - created the new InputActionAsset with the default name of "New Controls"
