@@ -1,5 +1,4 @@
 # input-codegen
-(author: Lurking Ninja <dev@lurking-ninja.com>)
 
 This is a simple package to automatically generate accessor code for Input System assets.
 The usage is simple. Install this package from the Package Manager by selecting the plus icon and clicking the Add package from Git URL option.
