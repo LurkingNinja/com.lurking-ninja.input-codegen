@@ -10,6 +10,9 @@ namespace LurkingNinja.Input.Editor
         private static string GetFullPath(string fileName, string path) =>
             $"{Application.dataPath}/../{path}{fileName}.cs";
 
+        private static string GetPath(string fileName, string path) =>
+            $"{path}{fileName}.cs";
+
         internal static string KeyToCSharpWithoutAt(string key) => KeyToCSharp(key, false);
 		
         internal static string KeyToCSharp(string key, bool addAt = true)
@@ -23,6 +26,9 @@ namespace LurkingNinja.Input.Editor
 
         private static string GetFileName(string fileName) =>
             Path.GetFileNameWithoutExtension(fileName).Replace(" ", "_");
+
+        internal static void DeleteFile(string fileName, string path) =>
+            AssetDatabase.DeleteAsset(GetPath(GetFileName(fileName), path));
 
         internal static void WriteFile(string fileName, string path, string content)
         {

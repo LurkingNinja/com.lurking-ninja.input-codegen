@@ -1,28 +1,22 @@
 #if UNITY_INPUTSYSTEM_ENABLED
 using System;
 using System.Text;
-using UnityEditor;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace LurkingNinja.Input.Editor
 {
     internal static class InputActionAssetPostProcess
     {
-	    private const string InputNamespace = "LurkingNinja.Input";
-	    private const string BasePath = "Assets/Plugins/LurkingNinja/GameFoundation/_generated/";
-	    private const string BaseTemplatePath = "Packages/com.lurkingninja.game-foundation/Editor/ScriptTemplates/";
-        private const string Path = BasePath + "Input/";
-        private const string TemplatePath = BaseTemplatePath + "Input/Input.cs.txt";
-		private const string ClassTemplatePath = BaseTemplatePath + "Input/Input.Class.cs.txt";
+	    internal static void DeleteFile(string filename) =>
+		    AssetPostProcessorHelper
+			    .DeleteFile(filename, InputCodegenSettings.Get.path);
 
-        internal static void GenerateFile(InputActionAsset inputActionAsset, string fileName) =>
-				AssetPostProcessorHelper.WriteFile(fileName, Path, GenerateFileContent(inputActionAsset));
+	    internal static void GenerateFile(InputActionAsset inputActionAsset, string filename) =>
+		    AssetPostProcessorHelper
+			    .WriteFile(filename, InputCodegenSettings.Get.path, GenerateFileContent(inputActionAsset));
 
-		private static string GenerateFileContent(InputActionAsset inputActionAsset)
+	    private static string GenerateFileContent(InputActionAsset inputActionAsset)
 		{
-			var template = AssetDatabase.LoadAssetAtPath<TextAsset>(TemplatePath).text;
-			var classTemplate = AssetDatabase.LoadAssetAtPath<TextAsset>(ClassTemplatePath).text;
 			var definitions = new StringBuilder();
 			var variables = new StringBuilder();
 			var classes = new StringBuilder();
@@ -62,7 +56,7 @@ namespace LurkingNinja.Input.Editor
 					actionsLets.Append(Environment.NewLine);
 				}
 
-				classes.Append(string.Format(classTemplate,
+				classes.Append(string.Format(InputCodegenSettings.Get.classTemplate,
 					/*{0}*/AssetPostProcessorHelper.KeyToCSharp(actionMap.name),
 					/*{1}*/AssetPostProcessorHelper.KeyToCSharpWithoutAt(actionMap.name),
 					/*{2}*/actionsDefinitions,
@@ -70,13 +64,13 @@ namespace LurkingNinja.Input.Editor
 				classes.Append(Environment.NewLine);
 			}
 
-			return string.Format(template,
+			return string.Format(InputCodegenSettings.Get.template,
 				/*{0}*/DateTime.Now,
 				/*{1}*/AssetPostProcessorHelper.KeyToCSharp(inputActionAsset.name),
 				/*{2}*/definitions,
 				/*{3}*/variables,
 				/*{4}*/classes,
-				/*{5}*/InputNamespace);
+				/*{5}*/InputCodegenSettings.Get.inputNamespace);
 		}
     }
 }
