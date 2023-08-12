@@ -2,7 +2,8 @@
     "name": "com.lurking-ninja.input-codegen",
     "rootNamespace": "LurkingNinja.Input",
     "references": [
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "com.lurking-ninja.codegen"
     ],
     "includePlatforms": [
         "Editor"
@@ -17,7 +18,7 @@
         {
             "name": "com.unity.inputsystem",
             "expression": "",
-            "define": "UNITY_INPUTSYSTEM_ENABLED"
+            "define": "INPUT_SYSTEM_ENABLED"
         }
     ],
     "noEngineReferences": false
