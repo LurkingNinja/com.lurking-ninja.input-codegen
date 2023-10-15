@@ -65,7 +65,10 @@ namespace {5}
         private static InputCodegenSettings _config;
 
         public static InputCodegenSettings Get => GenerateConfigFile();
-        
+
+        [InitializeOnLoadMethod]
+        private static void BootUp() => GenerateConfigFile();
+
         private static InputCodegenSettings GenerateConfigFile()
         {
             if (_config != null) return _config;
@@ -75,7 +78,6 @@ namespace {5}
                 Directory.CreateDirectory(INPUT_CODEGEN_CONFIG_FOLDER);
             _config = CreateInstance<InputCodegenSettings>();
             AssetDatabase.CreateAsset(_config, INPUT_CODEGEN_CONFIG_FILE);
-            AssetDatabase.SaveAssets();
             return _config;
         }
         
