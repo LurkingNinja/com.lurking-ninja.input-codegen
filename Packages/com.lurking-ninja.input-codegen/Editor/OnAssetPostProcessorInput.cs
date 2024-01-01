@@ -112,7 +112,7 @@ namespace LurkingNinja.Input.Editor
     {
 	    static OnAssetPostProcessorInputInstall()
 	    {
-		    Client.Add("https://github.com/LurkingNinja/com.lurking-ninja.codegen.git");
+		    Client.Add("https://github.com/LurkingNinja/com.lurking-ninja.codegen.git?path=Packages/com.lurking-ninja.codegen");
 		    Client.Add("com.unity.inputsystem");
 	    }
     }
