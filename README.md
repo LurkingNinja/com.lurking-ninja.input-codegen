@@ -1,7 +1,8 @@
 # Input System Codegen
 This is a simple package to automatically generate accessor code for Input System assets.
 ## Installation
-Install the prerequisite [Codegen](https://github.com/LurkingNinja/com.lurking-ninja.codegen) package and the [Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/index.html) package.
+The prerequisite [Codegen](https://github.com/LurkingNinja/com.lurking-ninja.codegen) package and the [Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/index.html) packages will be installed automatically.
+
 You can choose manually installing the package or from GitHub source.
 ### Add package from git URL
 Use the Package Manager's ```+/Add package from git URL``` function.
