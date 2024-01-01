@@ -1,3 +1,10 @@
+/***
+ * Input System Codegen
+ * Copyright (c) 2022-2023 Lurking Ninja.
+ *
+ * MIT License
+ * https://github.com/LurkingNinja/com.lurking-ninja.input-codegen
+ */
 #if INPUT_SYSTEM_ENABLED
 using System;
 using System.Text;
@@ -97,14 +104,17 @@ namespace LurkingNinja.Input.Editor
 #else
 using UnityEditor;
 using UnityEditor.PackageManager;
-using UnityEngine;
 
 namespace LurkingNinja.Input.Editor
 {
     [InitializeOnLoad]
     public static class OnAssetPostProcessorInputInstall
     {
-	    static OnAssetPostProcessorInputInstall() => Client.Add("com.unity.inputsystem");
+	    static OnAssetPostProcessorInputInstall()
+	    {
+		    Client.Add("https://github.com/LurkingNinja/com.lurking-ninja.codegen.git");
+		    Client.Add("com.unity.inputsystem");
+	    }
     }
 }
 #endif
