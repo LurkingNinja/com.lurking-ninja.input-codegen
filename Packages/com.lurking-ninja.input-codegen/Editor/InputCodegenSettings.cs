@@ -1,6 +1,6 @@
 /***
  * Input System Codegen
- * Copyright (c) 2022-2023 Lurking Ninja.
+ * Copyright (c) 2022-2024 Lurking Ninja.
  *
  * MIT License
  * https://github.com/LurkingNinja/com.lurking-ninja.input-codegen

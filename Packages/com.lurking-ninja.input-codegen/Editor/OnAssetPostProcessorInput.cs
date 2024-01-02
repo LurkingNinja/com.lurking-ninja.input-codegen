@@ -1,11 +1,11 @@
 /***
  * Input System Codegen
- * Copyright (c) 2022-2023 Lurking Ninja.
+ * Copyright (c) 2022-2024 Lurking Ninja.
  *
  * MIT License
  * https://github.com/LurkingNinja/com.lurking-ninja.input-codegen
  */
-#if INPUT_SYSTEM_ENABLED
+#if INPUT_SYSTEM_ENABLED && LN_CODEGEN_PRESENT
 using System;
 using System.Text;
 using LurkingNinja.CodeGen.Editor;

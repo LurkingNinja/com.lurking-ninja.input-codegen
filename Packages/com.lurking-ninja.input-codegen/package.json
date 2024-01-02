@@ -4,7 +4,10 @@
   "version": "0.1.1",
   "unity": "2021.3",
   "description": "Input System binding dynamic code generation working with changing (re)binding",
-  "documentationUrl": "https://lurking-ninja.com/",
+  "documentationUrl": "https://github.com/LurkingNinja/com.lurking-ninja.input-codegen",
+  "changelogUrl": "https://github.com/LurkingNinja/com.lurking-ninja.input-codegen/blob/main/CHANGELOG.md",
+  "license": "MIT",
+  "licensesUrl": "https://github.com/LurkingNinja/com.lurking-ninja.input-codegen/blob/main/LICENSE",
   "author": {
     "name": "Lurking Ninja",
     "email": "dev@lurking-ninja.com",
