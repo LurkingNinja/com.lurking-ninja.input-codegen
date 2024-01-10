@@ -1,9 +1,9 @@
 ﻿{
-  "name": "com.lurkingninja.input-codegen",
+  "name": "com.lurking-ninja.input-codegen",
   "displayName": "InputSystem Codegen",
+  "description": "Input System binding dynamic code generation working with changing (re)binding",
   "version": "0.1.1",
   "unity": "2021.3",
-  "description": "Input System binding dynamic code generation working with changing (re)binding",
   "documentationUrl": "https://github.com/LurkingNinja/com.lurking-ninja.input-codegen",
   "changelogUrl": "https://github.com/LurkingNinja/com.lurking-ninja.input-codegen/blob/main/CHANGELOG.md",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "email": "dev@lurking-ninja.com",
     "url": "https://lurking-ninja.com/"
   },
-  "unityRelease": "14f1",
-  "type": "library"
+  "dependencies": {
+    "com.unity.inputsystem": "1.0.0"
+  }
 }
