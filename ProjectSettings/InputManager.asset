@@ -168,20 +168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -2476856423734187526}
   m_ActionId: c95b2375-e6d9-4b88-9c4c-c5e76515df4b
---- !u!114 &-4465075680184806714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/Interact
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -893940793758159130}
-  m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
 --- !u!114 &-3586672483650189025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +237,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    - m_Name: Interact
+    - m_Name: Interact_H
       m_Type: 1
       m_ExpectedControlType: Button
       m_Id: 852140f2-7766-474d-8707-702459ba45f3
@@ -277,12 +263,12 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: Previous
       m_Type: 0
-      m_ExpectedControlType: Axis
+      m_ExpectedControlType: 
       m_Id: 2776c80d-3c14-4091-8c56-d04ced07a2b0
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
-      m_Flags: 1
+      m_Flags: 0
     - m_Name: Next
       m_Type: 0
       m_ExpectedControlType: Axis
@@ -493,60 +479,60 @@ MonoBehaviour:
       m_Action: Sprint
       m_Flags: 0
     - m_Name: 
-      m_Id: 8cbb2f4b-a784-49cc-8d5e-c010b8c7f4e6
-      m_Path: <Gamepad>/leftStickPress
+      m_Id: 
+      m_Path: 
       m_Interactions: 
       m_Processors: 
-      m_Groups: Gamepad
-      m_Action: Sprint
+      m_Groups: 
+      m_Action: 
       m_Flags: 0
     - m_Name: 
-      m_Id: d8bf24bf-3f2f-4160-a97c-38ec1eb520ba
-      m_Path: <XRController>/trigger
+      m_Id: 
+      m_Path: 
       m_Interactions: 
       m_Processors: 
-      m_Groups: XR
-      m_Action: Sprint
+      m_Groups: 
+      m_Action: 
       m_Flags: 0
     - m_Name: 
-      m_Id: eb40bb66-4559-4dfa-9a2f-820438abb426
-      m_Path: <Keyboard>/space
+      m_Id: 
+      m_Path: 
       m_Interactions: 
       m_Processors: 
-      m_Groups: Keyboard&Mouse
-      m_Action: Jump
+      m_Groups: 
+      m_Action: 
       m_Flags: 0
     - m_Name: 
-      m_Id: daba33a1-ad0c-4742-a909-43ad1cdfbeb6
-      m_Path: <Gamepad>/buttonSouth
+      m_Id: 
+      m_Path: 
       m_Interactions: 
       m_Processors: 
-      m_Groups: Gamepad
-      m_Action: Jump
+      m_Groups: 
+      m_Action: 
       m_Flags: 0
     - m_Name: 
-      m_Id: 603f3daf-40bd-4854-8724-93e8017f59e3
-      m_Path: <XRController>/secondaryButton
+      m_Id: 
+      m_Path: 
       m_Interactions: 
       m_Processors: 
-      m_Groups: XR
-      m_Action: Jump
+      m_Groups: 
+      m_Action: 
       m_Flags: 0
     - m_Name: 
-      m_Id: 1534dc16-a6aa-499d-9c3a-22b47347b52a
-      m_Path: <Keyboard>/1
+      m_Id: 
+      m_Path: 
       m_Interactions: 
       m_Processors: 
-      m_Groups: Keyboard&Mouse
-      m_Action: Previous
+      m_Groups: 
+      m_Action: 
       m_Flags: 0
     - m_Name: 
-      m_Id: 25060bbd-a3a6-476e-8fba-45ae484aad05
-      m_Path: <Gamepad>/dpad/left
+      m_Id: 
+      m_Path: 
       m_Interactions: 
       m_Processors: 
-      m_Groups: Gamepad
-      m_Action: Previous
+      m_Groups: 
+      m_Action: 
       m_Flags: 0
     - m_Name: 
       m_Id: 1c04ea5f-b012-41d1-a6f7-02e963b52893
@@ -554,7 +540,7 @@ MonoBehaviour:
       m_Interactions: 
       m_Processors: 
       m_Groups: Keyboard&Mouse
-      m_Action: Interact
+      m_Action: Interact_H
       m_Flags: 0
     - m_Name: 
       m_Id: b3f66d0b-7751-423f-908b-a11c5bd95930
@@ -562,7 +548,7 @@ MonoBehaviour:
       m_Interactions: 
       m_Processors: 
       m_Groups: Gamepad
-      m_Action: Interact
+      m_Action: Interact_H
       m_Flags: 0
     - m_Name: 
       m_Id: 4f4649ac-64a8-4a73-af11-b3faef356a4d
@@ -2120,6 +2106,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -893940793758159130}
   m_ActionId: 15cef263-9014-4fd5-94d9-4e4a6234a6ef
+--- !u!114 &405908562225976267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Interact_H
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: -893940793758159130}
+  m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
 --- !u!114 &661272548541165506
 MonoBehaviour:
   m_ObjectHideFlags: 0

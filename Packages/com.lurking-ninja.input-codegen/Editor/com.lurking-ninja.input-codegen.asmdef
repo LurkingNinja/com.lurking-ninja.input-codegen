@@ -2,7 +2,7 @@
     "name": "com.lurking-ninja.input-codegen",
     "rootNamespace": "LurkingNinja.Input",
     "references": [
-        "Unity.InputSystem",
+        "com.unity.inputsystem",
         "com.lurking-ninja.codegen"
     ],
     "includePlatforms": [

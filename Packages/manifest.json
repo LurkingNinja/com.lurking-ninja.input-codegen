@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.lurkingninja.codegen": "https://github.com/LurkingNinja/com.lurking-ninja.codegen.git",
+    "com.lurking-ninja.codegen": "https://github.com/LurkingNinja/com.lurking-ninja.codegen.git?path=Packages/com.lurking-ninja.codegen",
     "com.unity.burst": "1.8.11",
     "com.unity.collections": "2.1.4",
     "com.unity.ide.rider": "3.0.27",

@@ -2,7 +2,7 @@
   "name": "com.lurking-ninja.input-codegen",
   "displayName": "InputSystem Codegen",
   "description": "Input System binding dynamic code generation working with changing (re)binding",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "unity": "2021.3",
   "documentationUrl": "https://github.com/LurkingNinja/com.lurking-ninja.input-codegen",
   "changelogUrl": "https://github.com/LurkingNinja/com.lurking-ninja.input-codegen/blob/main/CHANGELOG.md",

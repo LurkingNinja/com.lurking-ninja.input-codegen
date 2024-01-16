@@ -5,11 +5,12 @@
  * MIT License
  * https://github.com/LurkingNinja/com.lurking-ninja.input-codegen
  */
+using UnityEditor;
+
 #if INPUT_SYSTEM_ENABLED && LN_CODEGEN_PRESENT
 using System;
 using System.Text;
 using LurkingNinja.CodeGen.Editor;
-using UnityEditor;
 using UnityEngine.InputSystem;
 using Object = UnityEngine.Object;
 
@@ -93,7 +94,10 @@ namespace LurkingNinja.Input.Editor
 
 			return string.Format(InputCodegenSettings.Get.template,
 				/*{0}*/DateTime.Now,
-				/*{1}*/AssetPostProcessorHelper.KeyToCSharp(inputActionAsset.name),
+				/*{1}*/AssetPostProcessorHelper.KeyToCSharp(
+					inputActionAsset.name == "ProjectWideInputActions"
+						? "Project"
+						: inputActionAsset.name),
 				/*{2}*/definitions,
 				/*{3}*/variables,
 				/*{4}*/classes,
@@ -102,7 +106,6 @@ namespace LurkingNinja.Input.Editor
     }
 }
 #else
-using UnityEditor;
 using UnityEditor.PackageManager;
 
 namespace LurkingNinja.Input.Editor

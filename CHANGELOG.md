@@ -1,7 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-[[HOME](./README.md) | CHANGELOG | [LICENSE](./LICENSE)]
+## [0.1.2] - 2024-01-16
+### Added
+- Added support for ProjectWide Actions.
+The generator will give InputManager.cs filename
+and "Project" top-level C# name.
 
 ## [0.1.1] - 2023-11-15
 ### Changed
