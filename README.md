@@ -1,3 +1,9 @@
+# * Discontinued *
+---
+
+> Due to Unity improved their own codegen in the Input System package this is discontinued!
+> Check out the "new" unified [CodeGen library](https://github.com/LurkingNinja/com.lurking-ninja.codegen).
+
 # Input System Codegen
 This is a simple package to automatically generate accessor code for Input System assets.
 
@@ -20,7 +26,7 @@ https://github.com/LurkingNinja/com.lurking-ninja.input-codegen.git?path=Package
 
 ## Usage
 After the package installed, all you need to do is to create your [InputActionAsset](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/ActionAssets.html) as normal.
-When you create the asset or when you save it, this package generates a file in the ```Assets/Plugins/LurkingNinja/InputCodegen``` folder with the same name you named your asset with the exception of all spaces will be replaced with underscore character (_) and all special characters will be omitted. Please be careful with filenames from now on, they will serve as struct name in code as well.
+When you create the asset or when you save it, this package generates a file in the ```Assets/Plugins/LurkingNinja/InputCodegen``` folder with the same name you named your asset except all spaces will be replaced with underscore character (_) and all special characters will be omitted. Please be careful with filenames from now on, they will serve as struct name in code as well.
 
 Actual use of the new code if fairly simple, here is an example usage code:
 

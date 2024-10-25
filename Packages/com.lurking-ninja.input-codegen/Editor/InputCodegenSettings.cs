@@ -5,16 +5,16 @@
  * MIT License
  * https://github.com/LurkingNinja/com.lurking-ninja.input-codegen
  */
-using System.IO;
-using UnityEditor;
-using UnityEngine;
-
 namespace LurkingNinja.Input.Editor
 {
+    using System.IO;
+    using UnityEditor;
+    using UnityEngine;
+
     public class InputCodegenSettings : ScriptableObject
     {
-        private const string INPUT_CODEGEN_CONFIG_FOLDER = "Assets/Plugins/LurkingNinja/Editor";
-        private const string INPUT_CODEGEN_CONFIG_FILE = INPUT_CODEGEN_CONFIG_FOLDER + "/InputCodegenConfig.asset";
+        private const string _INPUT_CODEGEN_CONFIG_FOLDER = "Assets/Plugins/LurkingNinja/Editor";
+        private const string _INPUT_CODEGEN_CONFIG_FILE = _INPUT_CODEGEN_CONFIG_FOLDER + "/InputCodegenConfig.asset";
 
         public bool inputCodegenEnabled = true;
 
@@ -79,12 +79,12 @@ namespace {5}
         private static InputCodegenSettings GenerateConfigFile()
         {
             if (_config != null) return _config;
-            _config = AssetDatabase.LoadAssetAtPath<InputCodegenSettings>(INPUT_CODEGEN_CONFIG_FILE);
+            _config = AssetDatabase.LoadAssetAtPath<InputCodegenSettings>(_INPUT_CODEGEN_CONFIG_FILE);
             if (_config != null) return _config;
-            if (!Directory.Exists(INPUT_CODEGEN_CONFIG_FOLDER))
-                Directory.CreateDirectory(INPUT_CODEGEN_CONFIG_FOLDER);
+            if (!Directory.Exists(_INPUT_CODEGEN_CONFIG_FOLDER))
+                Directory.CreateDirectory(_INPUT_CODEGEN_CONFIG_FOLDER);
             _config = CreateInstance<InputCodegenSettings>();
-            AssetDatabase.CreateAsset(_config, INPUT_CODEGEN_CONFIG_FILE);
+            AssetDatabase.CreateAsset(_config, _INPUT_CODEGEN_CONFIG_FILE);
             return _config;
         }
         

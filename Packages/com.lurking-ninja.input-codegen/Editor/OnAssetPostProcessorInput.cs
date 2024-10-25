@@ -5,12 +5,11 @@
  * MIT License
  * https://github.com/LurkingNinja/com.lurking-ninja.input-codegen
  */
-using UnityEditor;
+#if INPUT_SYSTEM_ENABLED
 
-#if INPUT_SYSTEM_ENABLED && LN_CODEGEN_PRESENT
+using UnityEditor;
 using System;
 using System.Text;
-using LurkingNinja.CodeGen.Editor;
 using UnityEngine.InputSystem;
 using Object = UnityEngine.Object;
 
@@ -49,18 +48,18 @@ namespace LurkingNinja.Input.Editor
 			var variables = new StringBuilder();
 			var classes = new StringBuilder();
 
-			const string oneDefinition = "\t\t\t{0} = new {0}Actions(asset);";
-			const string oneVariable = "\t\tpublic {0}Actions {0} {{ get; }}";
-			const string oneAction = "public InputAction {0} => {2}Map.FindAction(\"{1}\");";
-			const string oneActionDefinition = "\t\t\tpublic InputAction {0};";
-			const string oneActionLet = "\t\t\t\t{0} = _actionMap.FindAction(\"{1}\");";
+			const string ONE_DEFINITION = "\t\t\t{0} = new {0}Actions(asset);";
+			const string ONE_VARIABLE = "\t\tpublic {0}Actions {0} {{ get; }}";
+			const string ONE_ACTION = "public InputAction {0} => {2}Map.FindAction(\"{1}\");";
+			const string ONE_ACTION_DEFINITION = "\t\t\tpublic InputAction {0};";
+			const string ONE_ACTION_LET = "\t\t\t\t{0} = _actionMap.FindAction(\"{1}\");";
 
 			foreach(var actionMap in inputActionAsset.actionMaps)
 			{
-				definitions.Append(string.Format(oneDefinition,
+				definitions.Append(string.Format(ONE_DEFINITION,
 					/*{0}*/AssetPostProcessorHelper.KeyToCSharp(actionMap.name)));
 				definitions.Append(Environment.NewLine);
-				variables.Append(string.Format(oneVariable,
+				variables.Append(string.Format(ONE_VARIABLE,
 					/*{0}*/AssetPostProcessorHelper.KeyToCSharp(actionMap.name)));
 				variables.Append(Environment.NewLine);
 				
@@ -70,15 +69,15 @@ namespace LurkingNinja.Input.Editor
 				
 				foreach(var inputAction in actionMap.actions)
 				{
-					actions.Append(string.Format(oneAction,
+					actions.Append(string.Format(ONE_ACTION,
 						/*{0}*/AssetPostProcessorHelper.KeyToCSharp(inputAction.name),
 						/*{1}*/AssetPostProcessorHelper.KeyToCSharpWithoutAt(inputAction.name),
 						/*{2}*/AssetPostProcessorHelper.KeyToCSharp(actionMap.name)));
 					actions.Append(Environment.NewLine);
-					actionsDefinitions.Append(string.Format(oneActionDefinition,
+					actionsDefinitions.Append(string.Format(ONE_ACTION_DEFINITION,
 						/*{0}*/AssetPostProcessorHelper.KeyToCSharp(inputAction.name)));
 					actionsDefinitions.Append(Environment.NewLine);
-					actionsLets.Append(string.Format(oneActionLet,
+					actionsLets.Append(string.Format(ONE_ACTION_LET,
 						/*{0}*/AssetPostProcessorHelper.KeyToCSharp(inputAction.name),
 						/*{1}*/AssetPostProcessorHelper.KeyToCSharpWithoutAt(inputAction.name)));
 					actionsLets.Append(Environment.NewLine);
@@ -106,16 +105,17 @@ namespace LurkingNinja.Input.Editor
     }
 }
 #else
-using UnityEditor.PackageManager;
 
 namespace LurkingNinja.Input.Editor
 {
-    [InitializeOnLoad]
+	using UnityEditor;
+	using UnityEditor.PackageManager;
+
+	[InitializeOnLoad]
     public static class OnAssetPostProcessorInputInstall
     {
 	    static OnAssetPostProcessorInputInstall()
 	    {
-		    Client.Add("https://github.com/LurkingNinja/com.lurking-ninja.codegen.git?path=Packages/com.lurking-ninja.codegen");
 		    Client.Add("com.unity.inputsystem");
 	    }
     }

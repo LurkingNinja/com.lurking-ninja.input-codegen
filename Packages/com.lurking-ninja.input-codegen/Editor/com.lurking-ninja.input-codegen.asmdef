@@ -2,8 +2,7 @@
     "name": "com.lurking-ninja.input-codegen",
     "rootNamespace": "LurkingNinja.Input",
     "references": [
-        "com.unity.inputsystem",
-        "com.lurking-ninja.codegen"
+        "Unity.InputSystem"
     ],
     "includePlatforms": [
         "Editor"
@@ -15,11 +14,6 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [
-        {
-            "name": "com.lurkingninja.codegen",
-            "expression": "",
-            "define": "LN_CODEGEN_PRESENT"
-        },
         {
             "name": "com.unity.inputsystem",
             "expression": "",
